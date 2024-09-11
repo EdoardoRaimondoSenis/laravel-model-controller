@@ -4,16 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <title>Movies</title>
+    @vite('resources/js/app.js')
 </head>
 <body>
-    <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="..." alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nome Film</th>
+            <th scope="col">Titolo Originale</th>
+            <th scope="col">Nazionalitá</th>
+            <th scope="col">data di uscita</th>
+            <th scope="col">voto</th>
+          </tr>
+        </thead>
+        <tbody>
+            @foreach ($movies as $movie)
+            <tr>
+                <th scope="row">{{ $movie->title }}</th>
+                <td>{{ $movie->original_title }}</td>
+                <td>{{ $movie->nationality }}</td>
+                <td>{{ $movie->date }}</td>
+                <td>{{ $movie->vote }}</td>
+            </tr>
+            @endforeach
+        </tbody>
+      </table>
 </body>
 </html>

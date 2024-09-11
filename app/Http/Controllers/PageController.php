@@ -10,8 +10,7 @@ class PageController extends Controller {
 
         // prendo tutti gli elementi della tabella con all()
         $movies = Movie::all();
-        dd($movies);
 
-        return view('home');
+        return view('home', compact('movies'));
     }
 }
