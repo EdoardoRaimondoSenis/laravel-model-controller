@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
-use app\Http\Controllers\PageController as PageController;
 
 
 /*
@@ -19,13 +19,5 @@ Route::get('/', function () {
     $title = 'Layout base - HOME';
     return view('home', compact('title'));
 })->name('home');
-
-Route::get('/chi-siamo', function () {
-    return view('about');
-})->name('about');
-
-Route::get('/contatti', function () {
-    return view('contacts');
-})->name('contacts');
 
 Route::get('/', [PageController::class, 'index']);
